@@ -6,7 +6,7 @@
   <summary>Answer for part 1</summary>
 
 ```javascript
-
+54338
 ```
 
 </details>
@@ -15,7 +15,7 @@
   <summary>Answer for part 2</summary>
 
 ```javascript
-
+53389
 ```
 
 </details>
