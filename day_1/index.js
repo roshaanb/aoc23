@@ -1,9 +1,7 @@
 const { inputToArray } = require("../utils");
-const lines = inputToArray("./input.txt").split(",");
+const lines = inputToArray("./input.txt").toString().split(",");
 
-// p1
-
-trebuchet = (lines) => {
+part1 = () => {
   const linesNumbersOnly = lines.map((string) =>
     string.split("").filter((char) => !isNaN(parseInt(char)))
   );
@@ -13,8 +11,6 @@ trebuchet = (lines) => {
   });
   return sum;
 };
-
-// p2
 
 const nums = {
   one: 1,
@@ -40,7 +36,10 @@ const wordsToNums = (line) => {
   return 10 * matched[0] + matched[matched.length - 1];
 };
 
-let sum = 0;
-lines.forEach((line) => (sum += wordsToNums(line)));
+const part2 = () => {
+  let sum = 0;
+  lines.forEach((line) => (sum += wordsToNums(line)));
+  return sum;
+};
 
-console.log(`Part 1: ${trebuchet(lines)}, Part 2: ${sum}`);
+console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
