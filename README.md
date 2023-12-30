@@ -84,3 +84,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 5: [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+261668924
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+24261545
+```
+
+</details>
