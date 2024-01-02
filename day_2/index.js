@@ -7,7 +7,7 @@ const elfBag = {
   blue: 14,
 };
 
-const part1 = () => {
+part1 = () => {
   let sum = 0;
 
   for (let i = 0; i < input.length; i++) {
@@ -29,7 +29,7 @@ const part1 = () => {
   return sum;
 };
 
-const part2 = () => {
+part2 = () => {
   let sum = 0;
   for (let i = 0; i < input.length; i++) {
     const line = input[i];

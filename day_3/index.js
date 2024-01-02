@@ -1,7 +1,7 @@
 const { inputToArray } = require("../utils");
 const gondola = inputToArray("./input.txt");
 
-const part1 = () => {
+part1 = () => {
   let numsArray = [];
   let sum = 0;
   gondola.forEach((line, i) => {
@@ -56,7 +56,7 @@ const part1 = () => {
   return sum;
 };
 
-const part2 = () => {
+part2 = () => {
   const matrix = gondola.map((line) => line.split(""));
   let sum = 0;
   for (let i = 0; i < matrix.length; i++) {

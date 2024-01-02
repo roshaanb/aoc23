@@ -104,3 +104,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 6: [Wait For It](https://adventofcode.com/2023/day/6)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+633080
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+20048741
+```
+
+</details>

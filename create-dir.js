@@ -31,7 +31,7 @@ if (!dayNumber || isNaN(parseInt(dayNumber))) {
 try {
   if (!fs.existsSync(folderName)) {
     fs.mkdirSync(folderName);
-    
+
     axios
       .get(inputUrl, {
         headers: {
@@ -40,14 +40,17 @@ try {
       })
       .then((response) => {
         const input = response.data.trim();
+        const indexTemplate = fs.readFileSync("./index.template.js", "utf8");
 
         fs.writeFileSync(inputFileName, input);
         console.log(
           `Puzzle input for Day ${dayNumber} has been saved to ${inputFileName}`
         );
 
-        fs.writeFileSync(indexFileName, "");
-        console.log(`Empty index.js file has been created at ${indexFileName}`);
+        fs.writeFileSync(indexFileName, indexTemplate);
+        console.log(
+          `Template index.js file has been created at ${indexFileName}`
+        );
 
         fs.writeFileSync(testInputFileName, "");
         console.log(

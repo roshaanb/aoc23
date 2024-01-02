@@ -1,17 +1,6 @@
 const { inputToArray } = require("../utils");
 const lines = inputToArray("./input.txt").toString().split(",");
 
-part1 = () => {
-  const linesNumbersOnly = lines.map((string) =>
-    string.split("").filter((char) => !isNaN(parseInt(char)))
-  );
-  let sum = 0;
-  linesNumbersOnly.forEach((arr) => {
-    sum += 10 * parseInt(arr[0]) + parseInt(arr[arr.length - 1]);
-  });
-  return sum;
-};
-
 const nums = {
   one: 1,
   two: 2,
@@ -24,7 +13,26 @@ const nums = {
   nine: 9,
 };
 
-const wordsToNums = (line) => {
+part1 = () => {
+  const linesNumbersOnly = lines.map((string) =>
+    string.split("").filter((char) => !isNaN(parseInt(char)))
+  );
+  let sum = 0;
+  linesNumbersOnly.forEach((arr) => {
+    sum += 10 * parseInt(arr[0]) + parseInt(arr[arr.length - 1]);
+  });
+  return sum;
+};
+
+part2 = () => {
+  let sum = 0;
+  lines.forEach((line) => (sum += wordsToNums(line)));
+  return sum;
+};
+
+console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+
+function wordsToNums(line) {
   const matched = [
     ...line.matchAll(
       /(?=(one|two|three|four|five|six|seven|eight|nine|[0-9]))/g
@@ -34,12 +42,4 @@ const wordsToNums = (line) => {
     return nums[arr[1]];
   });
   return 10 * matched[0] + matched[matched.length - 1];
-};
-
-const part2 = () => {
-  let sum = 0;
-  lines.forEach((line) => (sum += wordsToNums(line)));
-  return sum;
-};
-
-console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+}
