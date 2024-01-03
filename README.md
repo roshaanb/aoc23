@@ -124,3 +124,25 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+</details>
+
+## Day 7: [Camel Cards](https://adventofcode.com/2023/day/7)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+251806792
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+252113488
+```
+
+</details>
