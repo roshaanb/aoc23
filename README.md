@@ -164,3 +164,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 9: [Mirage Maintenance](https://adventofcode.com/2023/day/9)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+1980437560
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+977
+```
+
+</details>
