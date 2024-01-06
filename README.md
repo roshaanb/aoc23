@@ -184,3 +184,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 10: [Pipe Maze](https://adventofcode.com/2023/day/10)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+6882
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+491
+```
+
+</details>
