@@ -204,3 +204,43 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 11: [Cosmic Expansion](https://adventofcode.com/2023/day/11)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+9609130
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+702152204842
+```
+
+</details>
+
+## Day 12: [Hot Springs](https://adventofcode.com/2023/day/12)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+7705
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+50338344809230
+```
+
+</details>
