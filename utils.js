@@ -21,3 +21,10 @@ exports.replaceAt = (str, i, char) => {
   str = str.join("");
   return str;
 };
+
+exports.transposeArray = (arr) => {
+  return arr[0]
+    .split("")
+    .map((_, colIndex) => arr.map((row) => row[colIndex]))
+    .map((col) => col.join(""));
+};

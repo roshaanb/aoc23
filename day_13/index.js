@@ -1,6 +1,6 @@
 const { readFileSync } = require("fs");
 const { min } = require("mathjs");
-const { arrayEquals } = require("../utils");
+const { arrayEquals, transposeArray } = require("../utils");
 
 let mirrors = readFileSync("./input.txt", "utf-8")
   .split("\n\n")
@@ -27,11 +27,7 @@ part2 = () => {
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
 
 function getSummary(mirror) {
-  const mirrorTransposed = mirror[0]
-    .split("")
-    .map((_, colIndex) => mirror.map((row) => row[colIndex]))
-    .map((col) => col.join(""));
-
+  const mirrorTransposed = transposeArray(mirror);
   return [
     findHorizontalMirrors(mirror)[0],
     findHorizontalMirrors(mirrorTransposed)[0],
@@ -84,11 +80,7 @@ function getNewSummary(arr) {
         }
       }
 
-      let arrCopyTransposed = arrCopy[0]
-        .split("")
-        .map((_, colIndex) => arrCopy.map((row) => row[colIndex]))
-        .map((col) => col.join(""));
-
+      let arrCopyTransposed = transposeArray(arrCopy);
       let verResult = findHorizontalMirrors(arrCopyTransposed);
       if (
         !arrayEquals(verResult, [0]) &&
