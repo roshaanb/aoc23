@@ -244,3 +244,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 13: [Point of Incidence](https://adventofcode.com/2023/day/13)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+33122
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+32312
+```
+
+</details>
