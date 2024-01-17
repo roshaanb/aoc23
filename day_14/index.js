@@ -1,12 +1,10 @@
 const { inputToArray } = require("../utils");
-const dish = inputToArray("./input.txt").map((a) => a.split(""));
+const dish = inputToArray(`${__dirname}/input.txt`).map((a) => a.split(""));
 
 part1 = () => {
   let arr = rotateBackwards(dish);
   arr = applyGravity(arr);
-  for (_ of Array(3)) {
-    arr = rotateBackwards(arr);
-  }
+  for (_ of Array(3)) arr = rotateBackwards(arr);
   return calculateLoad(arr);
 };
 

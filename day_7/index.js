@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const lines = inputToArray("./input.txt");
+const lines = inputToArray(`${__dirname}/input.txt`);
 
 let [cardValsBase13p1, cardValsBase13p2] = [
   { T: 8, J: 9, Q: "A", K: "B", A: "C" },
@@ -12,7 +12,10 @@ for (let i = 2; i < 10; i++) {
 
 part1 = () => createHands(lines, 1);
 part2 = () => createHands(lines, 2);
+
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function createHands(lines, partNum) {
   let handsWithRanks = lines.map((line) => {

@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-let tiles = inputToArray("./input.txt");
+let tiles = inputToArray(`${__dirname}/input.txt`);
 
 const [posOfS, pipeCords] = [{}, []];
 
@@ -34,7 +34,10 @@ const interiorPoints = loopArea / 2 - tileCount + 1;
 
 part1 = () => tileCount;
 part2 = () => interiorPoints;
+
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function posToChar({ row, col }) {
   return tiles[row].charAt(col);

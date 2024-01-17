@@ -1,5 +1,7 @@
 const { inputToArray } = require("../utils");
-const universe = inputToArray("./input.txt").map((line) => line.split(""));
+const universe = inputToArray(`${__dirname}/input.txt`).map((line) =>
+  line.split("")
+);
 
 const main = (expansionFactor) => {
   let [emptyRows, emptyCols, cords] = [[], [], []];
@@ -53,4 +55,6 @@ const main = (expansionFactor) => {
 const part1 = main(2);
 const part2 = main(1_000_000);
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1}, Part 2: ${part2}`);
+console.timeEnd("Execution Time");

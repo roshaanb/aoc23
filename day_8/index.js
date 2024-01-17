@@ -1,7 +1,7 @@
 const { inputToArray } = require("../utils");
 const { lcm } = require("mathjs");
 
-const lines = inputToArray("./input.txt");
+const lines = inputToArray(`${__dirname}/input.txt`);
 
 let info = {
   instructions: lines[0],
@@ -31,7 +31,10 @@ const steps = findZZZ();
 
 part1 = () => Math.min(...steps);
 part2 = () => lcm(...steps);
+
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function findZZZ() {
   for (let i = 0; i < info.locs.length; i++) {

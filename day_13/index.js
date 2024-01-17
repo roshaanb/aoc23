@@ -2,7 +2,7 @@ const { readFileSync } = require("fs");
 const { min } = require("mathjs");
 const { arrayEquals, transposeArray } = require("../utils");
 
-let mirrors = readFileSync("./input.txt", "utf-8")
+let mirrors = readFileSync(`${__dirname}/input.txt`, "utf-8")
   .split("\n\n")
   .map((data) => data.split("\n"));
 
@@ -24,7 +24,9 @@ part2 = () => {
   return summary[1] + 100 * summary[0];
 };
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function getSummary(mirror) {
   const mirrorTransposed = transposeArray(mirror);

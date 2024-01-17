@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const card = inputToArray("./input.txt").map((line) =>
+const card = inputToArray(`${__dirname}/input.txt`).map((line) =>
   line
     .replace(/Card\s+\d+:\s+/, "")
     .split(" | ")
@@ -44,4 +44,6 @@ part2 = () => {
   return sum;
 };
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");

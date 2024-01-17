@@ -1,13 +1,16 @@
 const { inputToArray } = require("../utils");
 
-const digits = inputToArray("./input.txt")
+const digits = inputToArray(`${__dirname}/input.txt`)
   .map((line) => line.split(" "))
   .map((line) => line.map((digit) => parseInt(digit)));
 const reversed = digits.map((arr) => [...arr].reverse());
 
 part1 = () => allDigitsSummed(digits);
 part2 = () => allDigitsSummed(reversed);
+
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function findNextDigit(arr) {
   let sum = 0;

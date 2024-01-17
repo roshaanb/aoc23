@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const input = inputToArray("./input.txt");
+const input = inputToArray(`${__dirname}/input.txt`);
 const seeds = input[0]
   .replace("seeds: ", "")
   .split(" ")
@@ -50,7 +50,9 @@ part2 = () => {
 };
 
 // execution Time: ~4 min ...
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function mapValue(arrs, value) {
   let out = value;

@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const lines = inputToArray("./input.txt").toString().split(",");
+const lines = inputToArray(`${__dirname}/input.txt`).toString().split(",");
 
 const nums = {
   one: 1,
@@ -30,7 +30,9 @@ part2 = () => {
   return sum;
 };
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function wordsToNums(line) {
   const matched = [

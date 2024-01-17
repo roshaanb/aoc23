@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=g3Ms5e7Jdqo&ab_channel=HyperNeutrino
 
 const { inputToArray, arrayEquals, replaceAt } = require("../utils");
 
-let input = inputToArray("./input.txt")
+let input = inputToArray(`${__dirname}/input.txt`)
   .map((line) => line.split(" "))
   .map((arr) => [arr[0], arr[1].split(",")]);
 
@@ -19,7 +19,10 @@ part1 = () => {
 };
 
 part2 = () => {};
+
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function arrangements(str, arr) {
   let count = 0;

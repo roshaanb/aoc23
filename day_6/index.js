@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-let arr = inputToArray("./input.txt");
+let arr = inputToArray(`${__dirname}/input.txt`);
 for (let i = 0; i < arr.length; i++) {
   arr[i] = arr[i].replace(/\w+:\s+/g, "").split(/\s+/g);
 }
@@ -22,7 +22,9 @@ part2 = () => {
   return results;
 };
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
 
 function numsOfRecords(time, distance) {
   let [holdTime, recordsCount] = [, 0];

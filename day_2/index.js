@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const input = inputToArray("./input.txt");
+const input = inputToArray(`${__dirname}/input.txt`);
 
 const elfBag = {
   red: 12,
@@ -53,4 +53,6 @@ part2 = () => {
   return sum;
 };
 
+console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");

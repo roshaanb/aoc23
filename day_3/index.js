@@ -1,5 +1,5 @@
 const { inputToArray } = require("../utils");
-const gondola = inputToArray("./input.txt");
+const gondola = inputToArray(`${__dirname}/input.txt`);
 
 part1 = () => {
   let numsArray = [];
@@ -77,6 +77,10 @@ part2 = () => {
   return sum;
 };
 
+console.time("Execution Time");
+console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
+console.timeEnd("Execution Time");
+
 function adjNum(mat, i, j, dir) {
   let base = "";
   let nums = [];
@@ -144,5 +148,3 @@ function findNumsBackwards(str) {
     .reverse()
     .join("");
 }
-
-console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
