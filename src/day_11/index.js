@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const universe = inputToArray(`${__dirname}/input.txt`).map((line) =>
   line.split("")
 );

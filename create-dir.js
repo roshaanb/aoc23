@@ -7,9 +7,9 @@ require("dotenv").config();
 const sessionCookie = process.env.SESSION_COOKIE;
 const dayNumber = process.argv[2];
 const [folderName, inputUrl, path] = [
-  `day_${dayNumber}`,
+  `src/day_${dayNumber}`,
   `https://adventofcode.com/2023/day/${dayNumber}/input`,
-  `/Users/roshaanbajwa/aoc23/day_${dayNumber}/`,
+  `/Users/roshaanbajwa/aoc23/src/day_${dayNumber}/`,
 ];
 
 const [inputFileName, testInputFileName, indexFileName] = [

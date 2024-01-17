@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const { lcm } = require("mathjs");
 
 const lines = inputToArray(`${__dirname}/input.txt`);

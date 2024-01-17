@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 let tiles = inputToArray(`${__dirname}/input.txt`);
 
 const [posOfS, pipeCords] = [{}, []];

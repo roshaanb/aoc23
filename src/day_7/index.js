@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const lines = inputToArray(`${__dirname}/input.txt`);
 
 let [cardValsBase13p1, cardValsBase13p2] = [

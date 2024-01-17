@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const dish = inputToArray(`${__dirname}/input.txt`).map((a) => a.split(""));
 
 part1 = () => {

@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const card = inputToArray(`${__dirname}/input.txt`).map((line) =>
   line
     .replace(/Card\s+\d+:\s+/, "")

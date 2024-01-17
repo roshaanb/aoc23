@@ -1,6 +1,6 @@
 const { readFileSync } = require("fs");
 const { min } = require("mathjs");
-const { arrayEquals, transposeArray } = require("../utils");
+const { arrayEquals, transposeArray } = require("../../utils");
 
 let mirrors = readFileSync(`${__dirname}/input.txt`, "utf-8")
   .split("\n\n")

@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const gondola = inputToArray(`${__dirname}/input.txt`);
 
 part1 = () => {

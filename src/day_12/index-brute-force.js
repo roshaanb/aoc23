@@ -4,7 +4,7 @@ tried it again after seeing HyperNeutrino's solution
 https://www.youtube.com/watch?v=g3Ms5e7Jdqo&ab_channel=HyperNeutrino
 */
 
-const { inputToArray, arrayEquals, replaceAt } = require("../utils");
+const { inputToArray, arrayEquals, replaceAt } = require("../../utils");
 
 let input = inputToArray(`${__dirname}/input.txt`)
   .map((line) => line.split(" "))

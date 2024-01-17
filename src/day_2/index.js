@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 const input = inputToArray(`${__dirname}/input.txt`);
 
 const elfBag = {

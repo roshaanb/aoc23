@@ -1,4 +1,4 @@
-const { inputToArray } = require("../utils");
+const { inputToArray } = require("../../utils");
 let arr = inputToArray(`${__dirname}/input.txt`);
 for (let i = 0; i < arr.length; i++) {
   arr[i] = arr[i].replace(/\w+:\s+/g, "").split(/\s+/g);
