@@ -32,7 +32,7 @@ function getSummary(mirror) {
   const mirrorTransposed = transposeArray(mirror);
   return [
     findHorizontalMirrors(mirror)[0],
-    findHorizontalMirrors(mirrorTransposed)[0],
+    findHorizontalMirrors(mirrorTransposed)[0]
   ];
 }
 

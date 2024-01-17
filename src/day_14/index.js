@@ -80,6 +80,6 @@ function slideO(array, index) {
   return [
     ...array.slice(0, targetIndex - 1),
     "O",
-    ...array.slice(targetIndex - 1),
+    ...array.slice(targetIndex - 1)
   ];
 }

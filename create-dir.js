@@ -9,13 +9,13 @@ const dayNumber = process.argv[2];
 const [folderName, inputUrl, path] = [
   `src/day_${dayNumber}`,
   `https://adventofcode.com/2023/day/${dayNumber}/input`,
-  `/Users/roshaanbajwa/aoc23/src/day_${dayNumber}/`,
+  `/Users/roshaanbajwa/aoc23/src/day_${dayNumber}/`
 ];
 
 const [inputFileName, testInputFileName, indexFileName] = [
   `${path}input.txt`,
   `${path}input.test.txt`,
-  `${path}index.js`,
+  `${path}index.js`
 ];
 
 if (!sessionCookie) {
@@ -35,8 +35,8 @@ try {
     axios
       .get(inputUrl, {
         headers: {
-          Cookie: `session=${sessionCookie}`,
-        },
+          Cookie: `session=${sessionCookie}`
+        }
       })
       .then((response) => {
         const input = response.data.trim();

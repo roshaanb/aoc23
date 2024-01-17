@@ -10,7 +10,7 @@ const nums = {
   six: 6,
   seven: 7,
   eight: 8,
-  nine: 9,
+  nine: 9
 };
 
 part1 = () => {
@@ -38,7 +38,7 @@ function wordsToNums(line) {
   const matched = [
     ...line.matchAll(
       /(?=(one|two|three|four|five|six|seven|eight|nine|[0-9]))/g
-    ),
+    )
   ].map((arr) => {
     if (!isNaN(parseInt(arr[1]))) return parseInt(arr[1]);
     return nums[arr[1]];

@@ -11,7 +11,7 @@ part1 = () => {
         num: match[0],
         numStartIndex: match.index,
         numLength: match[0].length,
-        lineIndex: i,
+        lineIndex: i
       });
     }
   });
@@ -23,7 +23,7 @@ part1 = () => {
       numStartIndex > 0 ? gondola[lineIndex][numStartIndex - 1] : ".",
       numStartIndex + numLength < gondola[lineIndex].length
         ? gondola[lineIndex][numStartIndex + numLength]
-        : ".",
+        : "."
     ];
 
     let above = ".";
@@ -66,7 +66,7 @@ part2 = () => {
           adjNum(matrix, i, j, "above"),
           adjNum(matrix, i, j, "below"),
           adjNum(matrix, i, j, "right"),
-          adjNum(matrix, i, j, "left"),
+          adjNum(matrix, i, j, "left")
         ].flat();
         if (adjNums.length === 2) {
           sum += adjNums.reduce((a, b) => parseInt(a) * parseInt(b));

@@ -48,7 +48,7 @@ function updatePosition(pos) {
     tiles[pos.row - 1] ? tiles[pos.row - 1].charAt(pos.col) : "na",
     tiles[pos.row] ? tiles[pos.row].charAt(pos.col + 1) : "na",
     tiles[pos.row + 1] ? tiles[pos.row + 1].charAt(pos.col) : "na",
-    tiles[pos.row] ? tiles[pos.row].charAt(pos.col - 1) : "na",
+    tiles[pos.row] ? tiles[pos.row].charAt(pos.col - 1) : "na"
   ];
 
   if (

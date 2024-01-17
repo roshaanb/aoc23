@@ -10,7 +10,7 @@ let input = inputToArray(`${__dirname}/input.txt`)
 
 let input2 = input.map(([string, array]) => [
   (string + "?").repeat(5).slice(0, -1),
-  [].concat(...Array(5).fill(array)),
+  [].concat(...Array(5).fill(array))
 ]);
 let cache = {};
 
