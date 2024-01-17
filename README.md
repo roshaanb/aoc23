@@ -264,3 +264,23 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 14: [Parabolic Reflector Dish](https://adventofcode.com/2023/day/14)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+106997
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+99641
+```
+
+</details>
