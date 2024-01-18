@@ -51,8 +51,7 @@ part2 = () => {
 
 // execution Time: ~4 min ...
 console.time("Execution Time");
-// console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
-console.log(true)
+console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
 console.timeEnd("Execution Time");
 
 function mapValue(arrs, value) {
@@ -74,7 +73,7 @@ function backwardsPropogate(num) {
     const rangesNdiff = arrs[counter].map(([destStart, sourceStart, step]) => [
       destStart,
       destStart + step - 1,
-      destStart - sourceStart,
+      destStart - sourceStart
     ]);
     if (!rangesNdiff.some(([start, end]) => result >= start && result <= end)) {
       out = result;

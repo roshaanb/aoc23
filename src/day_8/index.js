@@ -11,7 +11,7 @@ let info = {
   right: [],
   steps: [],
   locs: [],
-  currIndexes: [],
+  currIndexes: []
 };
 
 for (let i = 2; i < lines.length; i++) {

@@ -3,7 +3,7 @@ const lines = inputToArray(`${__dirname}/input.txt`);
 
 let [cardValsBase13p1, cardValsBase13p2] = [
   { T: 8, J: 9, Q: "A", K: "B", A: "C" },
-  { T: 9, J: 0, Q: "A", K: "B", A: "C" },
+  { T: 9, J: 0, Q: "A", K: "B", A: "C" }
 ];
 for (let i = 2; i < 10; i++) {
   cardValsBase13p1[i] = i - 2;
@@ -24,7 +24,7 @@ function createHands(lines, partNum) {
     obj[hand] = {
       cardRank: 0,
       tieBreak: 0,
-      bid: parseInt(bid),
+      bid: parseInt(bid)
     };
     return obj;
   });
