@@ -1,5 +1,5 @@
 const { readFileSync } = require("fs");
-const hashes = readFileSync(`${__dirname}/input.test.txt`, "utf-8").split(",");
+const hashes = readFileSync(`${__dirname}/input.txt`, "utf-8").split(",");
 
 let lenses = [];
 for (_ of Array(256)) lenses.push([]);

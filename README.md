@@ -284,3 +284,43 @@ To create the template directory for a specific day:
 ```
 
 </details>
+
+## Day 15: [Lens Library](https://adventofcode.com/2023/day/15)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+512283
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+215827
+```
+
+</details>
+
+## Day 16: [The Floor Will Be Lava](https://adventofcode.com/2023/day/16)
+
+<details>
+  <summary>Answer for part 1</summary>
+
+```javascript
+7034
+```
+
+</details>
+
+<details>
+  <summary>Answer for part 2</summary>
+
+```javascript
+7759
+```
+
+</details>
