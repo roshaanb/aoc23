@@ -4,7 +4,7 @@ const grid = inputToArray(`${__dirname}/input.txt`).map((line) =>
 );
 
 part1 = () => {
-  let beams = [{ cord: [0, 0], dir: "E" }];
+  let beams = [[0, 0, 0, 1]];
   return energizedCount(beams);
 };
 
@@ -12,12 +12,10 @@ part2 = () => {
   let maxScore = 0;
   let startingBeams = [];
   for (let i = 0; i < grid.length; i++) {
-    startingBeams.push([{ cord: [i, 0], dir: "E" }]);
-    startingBeams.push([{ cord: [i, grid[i].length - 1], dir: "W" }]);
+    startingBeams.push([[i, 0, 0, 1]], [[i, grid[i].length - 1, 0, -1]]);
   }
   for (let j = 0; j < grid[0].length; j++) {
-    startingBeams.push([{ cord: [0, j], dir: "S" }]);
-    startingBeams.push([{ cord: [grid[0].length - 1, j], dir: "N" }]);
+    startingBeams.push([[0, j, 1, 0]], [[grid[0].length - 1, j, -1, 0]]);
   }
   startingBeams.forEach((beam) => {
     let score = energizedCount(beam);
@@ -26,6 +24,7 @@ part2 = () => {
   return maxScore;
 };
 
+// ~25 seconds
 console.time("Execution Time");
 console.log(`Part 1: ${part1()}, Part 2: ${part2()}`);
 console.timeEnd("Execution Time");
@@ -35,143 +34,63 @@ function energizedCount(beams) {
   do {
     propogate(beams, visited);
   } while (beams.length);
-
-  let count = [...new Set(visited.map((beam) => beam.slice(0, -1)))];
+  let count = [
+    ...new Set(
+      visited.map((beam) => {
+        let [a, b] = beam.split(",");
+        return `${a},${b}`;
+      })
+    )
+  ];
   return count.length;
 }
 
 function propogate(beams, visited) {
-  let beam = ({ cord, dir } = beams[0]);
-  visited.push(`${beam.cord[0]},${beam.cord[1]},${beam.dir}`);
-  let secondBeam;
-  const char = grid[cord[0]][cord[1]];
-  switch (char) {
-    case ".":
-      switch (dir) {
-        case "N":
-          beam.cord[0]--;
-          break;
-        case "E":
-          beam.cord[1]++;
-          break;
-        case "S":
-          beam.cord[0]++;
-          break;
-        case "W":
-          beam.cord[1]--;
-          break;
-      }
-      break;
-    case "|":
-      switch (dir) {
-        case "N":
-          beam.cord[0]--;
-          break;
-        case "E":
-          secondBeam = JSON.parse(JSON.stringify(beam));
-          beam.cord[0]--;
-          beam.dir = "N";
-          secondBeam.cord[0]++;
-          secondBeam.dir = "S";
-          break;
-        case "S":
-          beam.cord[0]++;
-          break;
-        case "W":
-          secondBeam = JSON.parse(JSON.stringify(beam));
-          beam.cord[0]--;
-          beam.dir = "N";
-          secondBeam.cord[0]++;
-          secondBeam.dir = "S";
-          break;
-      }
-      break;
-    case "/":
-      switch (dir) {
-        case "N":
-          beam.cord[1]++;
-          beam.dir = "E";
-          break;
-        case "E":
-          beam.cord[0]--;
-          beam.dir = "N";
-          break;
-        case "S":
-          beam.cord[1]--;
-          beam.dir = "W";
-          break;
-        case "W":
-          beam.cord[0]++;
-          beam.dir = "S";
-          break;
-      }
-      break;
-    case "-":
-      switch (dir) {
-        case "N":
-          secondBeam = JSON.parse(JSON.stringify(beam));
-          beam.cord[1]++;
-          beam.dir = "E";
-          secondBeam.cord[1]--;
-          secondBeam.dir = "W";
-          break;
-        case "E":
-          beam.cord[1]++;
-          break;
-        case "S":
-          secondBeam = JSON.parse(JSON.stringify(beam));
-          beam.cord[1]++;
-          beam.dir = "E";
-          secondBeam.cord[1]--;
-          secondBeam.dir = "W";
-          break;
-        case "W":
-          beam.cord[1]--;
-          break;
-      }
-      break;
-    case "\\":
-      switch (dir) {
-        case "N":
-          beam.cord[1]--;
-          beam.dir = "W";
-          break;
-        case "E":
-          beam.cord[0]++;
-          beam.dir = "S";
-          break;
-        case "S":
-          beam.cord[1]++;
-          beam.dir = "E";
-          break;
-        case "W":
-          beam.cord[0]--;
-          beam.dir = "N";
-          break;
-      }
-      break;
+  let [r, c, dr, dc] = beams[0];
+  visited.push(`${r},${c},${dr},${dc}`);
+  let [r2, c2, dr2, dc2] = [];
+  const char = grid[r][c];
+  if (char == "." || (char == "|" && dc == 0) || (char == "-" && dr == 0)) {
+    [r, c] = [r + dr, c + dc];
   }
-  if (isBeamValid(beam, visited)) {
-    beams[0] = beam;
+  if (char == "/") {
+    [dr, dc] = [-dc, -dr];
+    [r, c] = [r + dr, c + dc];
+  }
+  if (char == "\\") {
+    [dr, dc] = [dc, dr];
+    [r, c] = [r + dr, c + dc];
+  }
+  if (char == "|" && dr == 0) {
+    [r2, c2, dr2, dc2] = JSON.parse(JSON.stringify([r, c, dr, dc]));
+    [dr, dc] = [-1, 0];
+    [r, c] = [r + dr, c + dc];
+    [dr2, dc2] = [1, 0];
+    [r2, c2] = [r2 + dr2, c2 + dc2];
+  }
+  if (char == "-" && dc == 0) {
+    [r2, c2, dr2, dc2] = JSON.parse(JSON.stringify([r, c, dr, dc]));
+    [dr, dc] = [0, 1];
+    [r, c] = [r + dr, c + dc];
+    [dr2, dc2] = [0, -1];
+    [r2, c2] = [r2 + dr2, c2 + dc2];
+  }
+
+  if (isBeamValid([r, c, dr, dc], visited)) {
+    beams[0] = [r, c, dr, dc];
   } else {
     beams.shift();
   }
-  if (secondBeam && isBeamValid(secondBeam, visited)) {
-    beams.push(secondBeam);
-    visited.push(
-      `${secondBeam.cord[0]},${secondBeam.cord[1]},${secondBeam.dir}`
-    );
+  if (r2 && isBeamValid([r2, c2, dr2, dc2], visited)) {
+    beams.push([r2, c2, dr2, dc2]);
+    visited.push(`${r2},${c2},${dr2},${dc2}`);
   }
 }
 
-function isBeamValid(beam, visited) {
-  let {
-    cord: [x, y],
-    dir
-  } = beam;
-  let stringified = `${x},${y},${dir}`;
+function isBeamValid([r, c, dr, dc], visited) {
+  let stringified = `${r},${c},${dr},${dc}`;
   const len = grid.length;
   return (
-    x > -1 && x < len && y > -1 && y < len && !visited.includes(stringified)
+    r > -1 && r < len && c > -1 && c < len && !visited.includes(stringified)
   );
 }
