@@ -2,7 +2,7 @@
 
 To create the template directory for a specific day:
 
-- Login to [adventofcode.com](adventofcode.com) and add the session cookie to the `.env` file
+- Login to [adventofcode.com](https://adventofcode.com/) and add the session cookie to the `.env` file
 - Run `create-dir.js` with the suffixed day number, e.g. `node create-dir.js 23`
 
 ## Day 1: [Trebuchet?!](https://adventofcode.com/2023/day/1)
